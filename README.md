@@ -15,8 +15,8 @@ sudo ./basic.sh
 CZ:
 ```
 wget https://github.com/ondrejhasnik/Linux_installation_automation/raw/main/manjaro/basic_cz.sh
-chmod +x basic.sh
-sudo ./basic.sh
+chmod +x basic_cz.sh
+sudo ./basic_cz.sh
 ```
 
 ## Arch Linux
