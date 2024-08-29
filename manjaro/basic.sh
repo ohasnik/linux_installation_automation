@@ -59,3 +59,10 @@ EOF"
 
 # Update GRUB to apply new configuration
 sudo update-grub
+
+yes | pacman -S cockpit
+yes | pacman -S cockpit-packagekit
+yes | pacman -S cockpit-ostree
+yes | pacman -S cockpit-sosreport
+systemctl enable --now cockpit.socket
+
