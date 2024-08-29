@@ -12,6 +12,13 @@ chmod +x basic.sh
 sudo ./basic.sh
 ```
 
+CZ:
+```
+wget https://github.com/ondrejhasnik/Linux_installation_automation/raw/main/manjaro/basic_cz.sh
+chmod +x basic.sh
+sudo ./basic.sh
+```
+
 ## Arch Linux
 
 Basic software:
