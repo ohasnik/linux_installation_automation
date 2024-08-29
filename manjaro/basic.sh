@@ -17,13 +17,13 @@ yes | pacman -S keysmith         # Install Keysmith for managing passwords
 yes | pacman -S kdeconnect       # Install KDE Connect for phone and PC integration
 
 # Enable and start fstrim.timer for SSD optimization
-sudo systemctl enable fstrim.timer
-sudo systemctl start fstrim.timer
+systemctl enable fstrim.timer
+systemctl start fstrim.timer
 
 # Install TLP for power management
 yes | sudo pacman -S tlp
-sudo systemctl enable tlp
-sudo systemctl start tlp
+systemctl enable tlp
+systemctl start tlp
 
 # Install and configure zram-generator
 yes | pacman -S zram-generator
@@ -35,8 +35,8 @@ echo "zram-size = ram / 2" | sudo tee -a $CONFIG_FILE > /dev/null  # Set zram si
 echo "compression-algorithm = lz4" | sudo tee -a $CONFIG_FILE > /dev/null  # Set compression algorithm to lz4
 
 # Reload systemd and restart zram setup service
-sudo systemctl daemon-reload
-sudo systemctl restart systemd-zram-setup@zram0
+systemctl daemon-reload
+systemctl restart systemd-zram-setup@zram0
 
 # Display current zram configuration
 zramctl
@@ -48,7 +48,7 @@ GRUB_CFG="/etc/default/grub"
 cp $GRUB_CFG ${GRUB_CFG}.bak
 
 # Save new GRUB settings to the configuration file
-sudo bash -c "cat > $GRUB_CFG << EOF
+bash -c "cat > $GRUB_CFG << EOF
 # GRUB configuration
 GRUB_DEFAULT=0
 GRUB_TIMEOUT=1
@@ -58,7 +58,7 @@ GRUB_CMDLINE_LINUX=\"\"
 EOF"
 
 # Update GRUB to apply new configuration
-sudo update-grub
+update-grub
 
 yes | pacman -S cockpit
 yes | pacman -S cockpit-packagekit
@@ -66,4 +66,3 @@ yes | pacman -S cockpit-ostree
 yes | pacman -S cockpit-sosreport
 yes | pacman -S cockpit-networkmanager
 systemctl enable --now cockpit.socket
-
