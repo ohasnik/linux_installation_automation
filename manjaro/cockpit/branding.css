@@ -1,8 +1,3 @@
-.login-note {
-    color: transparent;
-    position: relative;
-}
-
 body.login-pf {
     background: url("bg-plain.jpg") no-repeat 50% 0;
     background-size: cover;
@@ -28,5 +23,9 @@ body.login-pf {
 }
 
 #brand::before {
-    content: "ondhas SOFTWARE";
+    content: "ondhas SOFTWARE Administration";
+}
+
+#index-brand::before {
+    content: "ondhas SOFTWARE Administration";
 }
