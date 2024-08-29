@@ -64,5 +64,6 @@ yes | pacman -S cockpit
 yes | pacman -S cockpit-packagekit
 yes | pacman -S cockpit-ostree
 yes | pacman -S cockpit-sosreport
+yes | pacman -S cockpit-networkmanager
 systemctl enable --now cockpit.socket
 
