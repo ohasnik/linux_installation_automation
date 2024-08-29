@@ -21,7 +21,7 @@ systemctl enable fstrim.timer
 systemctl start fstrim.timer
 
 # Install TLP for power management
-yes "A" | sudo pacman -S tlp
+yes "A" | pacman -S tlp
 systemctl enable tlp
 systemctl start tlp
 
@@ -30,9 +30,9 @@ yes | pacman -S zram-generator
 CONFIG_FILE="/etc/systemd/zram-generator.conf"
 
 # Create and write zram configuration file
-echo "[zram0]" | sudo tee $CONFIG_FILE > /dev/null
-echo "zram-size = ram / 2" | sudo tee -a $CONFIG_FILE > /dev/null  # Set zram size to half of available RAM
-echo "compression-algorithm = lz4" | sudo tee -a $CONFIG_FILE > /dev/null  # Set compression algorithm to lz4
+echo "[zram0]" | tee $CONFIG_FILE > /dev/null
+echo "zram-size = ram / 2" | tee -a $CONFIG_FILE > /dev/null  # Set zram size to half of available RAM
+echo "compression-algorithm = lz4" | tee -a $CONFIG_FILE > /dev/null  # Set compression algorithm to lz4
 
 # Reload systemd and restart zram setup service
 systemctl daemon-reload
@@ -48,7 +48,7 @@ GRUB_CFG="/etc/default/grub"
 cp $GRUB_CFG ${GRUB_CFG}.bak
 
 # Save new GRUB settings to the configuration file
-sudo bash -c "cat > $GRUB_CFG << EOF
+bash -c "cat > $GRUB_CFG << EOF
 # GRUB configuration
 GRUB_DEFAULT=0
 GRUB_TIMEOUT=1
