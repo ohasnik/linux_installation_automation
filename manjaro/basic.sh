@@ -66,3 +66,7 @@ yes | pacman -S cockpit-ostree
 yes | pacman -S cockpit-sosreport
 yes | pacman -S cockpit-networkmanager
 systemctl enable --now cockpit.socket
+
+yes "A" | pacman -S firewalld
+systemctl start firewalld
+systemctl enable firewalld
