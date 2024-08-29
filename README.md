@@ -1,2 +1,2 @@
-# Linux_installation_automation
+# Linux installation automation
 Linux installation automation
