@@ -26,7 +26,7 @@ systemctl enable tlp
 systemctl start tlp
 
 # Install and configure zram-generator
-yes | pacman -S zram-generator
+yes "A" | pacman -S zram-generator
 CONFIG_FILE="/etc/systemd/zram-generator.conf"
 
 # Create and write zram configuration file
