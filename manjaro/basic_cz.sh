@@ -60,13 +60,3 @@ EOF"
 # Update GRUB to apply new configuration
 update-grub
 
-yes "A" | pacman -S cockpit
-yes "A" | pacman -S cockpit-packagekit
-yes "A" | pacman -S cockpit-ostree
-yes "A" | pacman -S cockpit-sosreport
-yes "A" | pacman -S cockpit-networkmanager
-systemctl enable --now cockpit.socket
-
-yes "A" | pacman -S firewalld
-systemctl start firewalld
-systemctl enable firewalld
